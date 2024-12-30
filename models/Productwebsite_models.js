@@ -1,0 +1,122 @@
+const mongoose = require('mongoose');
+const productwebsiteSchema = new mongoose.Schema({
+salary_period:{
+    type:String,
+    required:false
+},
+position_type:{
+    type:String,
+    required:false
+},
+salary_from:{
+    type:String,
+    required:false
+},
+salary_to:{
+    type:String,
+    required:false
+},
+ad_title:{
+    type:String,
+    required:false
+},
+description:{
+    type:String,
+    required:false
+},
+price:{
+    type:String,
+    required:false
+},
+upload_photos:{
+    type:Array,
+    required:false
+},
+// author information
+post_type:{
+	type:String,
+	required:false
+},
+post_bhk:{
+	type:String,
+	required:false
+},
+bathrooms:{
+	type:String,
+	required:false
+},
+furnishing:{
+	type:String,
+	required:false
+},
+project_status:{
+	type:String,
+	required:false
+},
+listing_by:{
+	type:String,
+	required:false
+},
+super_area_sqft:{
+	type:String,
+	required:false
+},
+carpet_area_sqft:{
+	type:String,
+	required:false
+},
+bachelors_allowed:{
+    type:String,
+    required:false
+},
+maintenance_monthly:{
+	type:String,
+	required:false
+},
+total_floors:{
+	type:String,
+	required:false
+},
+floor_number:{
+	type:String,
+	required:false
+},
+
+car_parking:{
+	type:String,
+	required:false
+},
+facing:{
+	type:String,
+	required:false
+},
+project_name:{
+	type:String,
+	required:false
+},
+washrooms:{
+    type:String,
+	required:false
+},
+plot_area:{
+    type:String,
+    required:false
+},
+length:{
+    type:String,
+    required:false
+},
+breadth:{
+    type:String,
+    required:false
+},
+sub_type:{
+    type:String,
+    required:false
+},
+meals_included:{
+    type:String,
+    required:false
+}
+},{timestamps:true});
+module.exports =  mongoose.model("productwebsite",productwebsiteSchema);

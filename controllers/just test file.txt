@@ -1,0 +1,38 @@
+const Add_membership = async (req, res) => {
+    const { amount, plan_validity, membership_plan_status } = req.body;
+
+    try {
+        // Validate fields
+        if (!amount || !Array.isArray(amount) || amount.length === 0) {
+            return res.status(400).json({
+                result: "false",
+                message: "amount field is required and should be an array with at least one value.",
+            });
+        }
+
+        if (!plan_validity || !membership_plan_status) {
+            return res.status(400).json({
+                result: "false",
+                message: "plan_validity and membership_plan_status fields are required.",
+            });
+        }
+
+        // Create and save membership
+        const membership_add = new membershipModel({
+            amount, // Array of amounts
+            plan_validity,
+            membership_plan_status,
+        });
+
+        const addmembershipshow = await membership_add.save();
+
+        res.status(200).json({
+            result: "true",
+            msg: "Membership data added successfully.",
+            data: addmembershipshow,
+        });
+
+    } catch (error) {
+        res.status(400).json({ result: "false", message: error.message });
+    }
+};
